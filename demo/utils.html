@@ -49,7 +49,7 @@
   //document.body.appendChild(dummy);
 
   function showSuccess() {
-    var event = new CustomEvent('ev-show-success', {
+    var event = new CustomEvent('oe-show-success', {
       detail: 'Saved Successfully!'
     });
     window.dispatchEvent(event);
@@ -57,7 +57,7 @@
   }
 
   function showMessage() {
-    var event = new CustomEvent('ev-show-message', {
+    var event = new CustomEvent('oe-show-message', {
       detail: 'Hello World!'
     });
     window.dispatchEvent(event);
@@ -65,7 +65,7 @@
   }
 
   function showWarning() {
-    var event = new CustomEvent('ev-show-warning', {
+    var event = new CustomEvent('oe-show-warning', {
       detail: 'This is a warning message!'
     });
     window.dispatchEvent(event);
@@ -73,7 +73,7 @@
   }
 
   function showError() {
-    var event = new CustomEvent('ev-show-error', {
+    var event = new CustomEvent('oe-show-error', {
       detail: 'Oh snap! something is terribly wrong here'
     });
     window.dispatchEvent(event);
@@ -82,7 +82,7 @@
 
 
   function showMessageForever() {
-    var event = new CustomEvent('ev-show-message', {
+    var event = new CustomEvent('oe-show-message', {
       detail: {
         forever: true,
         message: 'This message stays forever!'
@@ -93,21 +93,21 @@
   }
 
   function okPressed(evt) { // eslint-disable-line  no-unused-vars
-    var event = new CustomEvent('ev-show-message', {
+    var event = new CustomEvent('oe-show-message', {
       detail: 'Great! Lets get started.'
     });
     window.dispatchEvent(event);
   }
 
   function cancelPressed(evt) { // eslint-disable-line  no-unused-vars
-    var event = new CustomEvent('ev-show-warning', {
+    var event = new CustomEvent('oe-show-warning', {
       detail: 'No problem, may be some other time!'
     });
     window.dispatchEvent(event);
   }
 
   function getConfirmation() {
-    var event = new CustomEvent('ev-show-confirm', {
+    var event = new CustomEvent('oe-show-confirm', {
       detail: {
         message: 'Are you sure?',
         ok: okPressed,
@@ -118,7 +118,7 @@
   }
 
   function demoTranslatedMessage() {
-    var event = new CustomEvent('ev-show-message', {
+    var event = new CustomEvent('oe-show-message', {
       detail: 'valueMissing'
     });
     window.dispatchEvent(event);
@@ -126,7 +126,7 @@
   }
 
   function demoTranslationFallback() {
-    var event = new CustomEvent('ev-show-message', {
+    var event = new CustomEvent('oe-show-message', {
       detail: {
         code: 'invalid-credentials',
         message: 'Fallback message for Invalid Credentials'

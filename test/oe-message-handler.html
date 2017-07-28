@@ -21,7 +21,6 @@
   <script src="../../iron-test-helpers/mock-interactions.js"></script>
 
   <link rel="import" href="../oe-message-handler.html">
-  <link rel="import" href="oe-resource-page.html">
 </head>
 
 <body>
@@ -32,7 +31,7 @@
   <!-- dummy fixture to fire the oe-message events -->
   <test-fixture id="simple">
     <template>
-      <oe-resource-page></oe-resource-page>
+      <template is="dom-bind"></template>
     </template>
   </test-fixture>
 

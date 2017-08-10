@@ -45,7 +45,7 @@
     elem.$.input.fire('change');
   }
 
-  //var dummy = document.createElement('ev-hbox');
+  //var dummy = document.createElement('oe-hbox');
   //document.body.appendChild(dummy);
 
   function showSuccess() {
@@ -53,7 +53,7 @@
       detail: 'Saved Successfully!'
     });
     window.dispatchEvent(event);
-    //dummy.fire('ev-show-success', 'Saved Successfully!');
+    //dummy.fire('oe-show-success', 'Saved Successfully!');
   }
 
   function showMessage() {
@@ -61,7 +61,7 @@
       detail: 'Hello World!'
     });
     window.dispatchEvent(event);
-    //dummy.fire('ev-show-message', 'Hello World!');
+    //dummy.fire('oe-show-message', 'Hello World!');
   }
 
   function showWarning() {
@@ -69,7 +69,7 @@
       detail: 'This is a warning message!'
     });
     window.dispatchEvent(event);
-    //dummy.fire('ev-show-warning', 'This is a warning message!');
+    //dummy.fire('oe-show-warning', 'This is a warning message!');
   }
 
   function showError() {
@@ -77,7 +77,7 @@
       detail: 'Oh snap! something is terribly wrong here'
     });
     window.dispatchEvent(event);
-    //dummy.fire('ev-show-error', 'Oh snap! something is terribly wrong here');
+    //dummy.fire('oe-show-error', 'Oh snap! something is terribly wrong here');
   }
 
 
@@ -89,7 +89,7 @@
       }
     });
     window.dispatchEvent(event);
-    //dummy.fire('ev-show-message', 'Hello World!');
+    //dummy.fire('oe-show-message', 'Hello World!');
   }
 
   function okPressed(evt) { // eslint-disable-line  no-unused-vars
@@ -122,7 +122,7 @@
       detail: 'valueMissing'
     });
     window.dispatchEvent(event);
-    //dummy.fire('ev-show-message', 'valueMissing');
+    //dummy.fire('oe-show-message', 'valueMissing');
   }
 
   function demoTranslationFallback() {
@@ -133,7 +133,7 @@
       }
     });
     window.dispatchEvent(event);
-    //dummy.fire('ev-show-message', {code:'invalid-credentials',message:'Fallback message for Invalid Credentials'});
+    //dummy.fire('oe-show-message', {code:'invalid-credentials',message:'Fallback message for Invalid Credentials'});
   }
 
   document.addEventListener('HTMLImportsLoaded', function () {

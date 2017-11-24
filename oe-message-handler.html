@@ -152,7 +152,8 @@ Custom property | Description | Default
       //use data.message also, in case somebody is still passing only message as messageCode and expecting translation
 
       var placeholders = data.placeholders;
-      var translatedMsg = this.$.translator.getInterpolatedMsg(msgCode, placeholders) || data.message || msgCode;
+      var i18nMsg = this.$.translator.getInterpolatedMsg(msgCode, placeholders);
+      var translatedMsg =  (i18nMsg === msgCode ? data.message : i18nMsg) || msgCode;
 
       var duration = data.forever ? 0 : this.duration;
 

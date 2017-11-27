@@ -153,7 +153,7 @@ Custom property | Description | Default
 
       var placeholders = data.placeholders;
       var i18nMsg = this.$.translator.getInterpolatedMsg(msgCode, placeholders);
-      var translatedMsg =  (i18nMsg === msgCode ? data.message : i18nMsg) || msgCode;
+      var translatedMsg =  i18nMsg || data.message || msgCode;
 
       var duration = data.forever ? 0 : this.duration;
 

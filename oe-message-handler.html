@@ -107,7 +107,7 @@ Custom property | Description | Default
   <template>
 
     <oe-i18n-msg id="translator"></oe-i18n-msg>
-    <paper-toast id="toast">
+      <paper-toast id="toast">
     </paper-toast>
 
     <paper-toast duration=0 id="closable">
@@ -180,6 +180,16 @@ Custom property | Description | Default
       toast.classList.remove('message');
       toast.classList.add(type);
       toast.show();
+      
+      //Move focus to the button appearing on toast message.
+      this.async(function(){
+        if(type === 'confirm'){
+          this.$.cancel.focus();
+        }
+        if(toast === this.$.closable){
+          this.$.closableOK.focus();
+        }
+      },300);
     },
     showConfirmation: function (data) {
       data.forever = true;

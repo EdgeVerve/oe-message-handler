@@ -1,0 +1,72 @@
+<!-- 
+  ©2016-2017 EdgeVerve Systems Limited (a fully owned Infosys subsidiary),
+  Bangalore, India. All Rights Reserved.
+-->
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+
+  <title>oe-extended-message-handler demo</title>
+
+
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+  <script src="utils.js"></script>
+  
+  <script type="module">
+    import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
+    import '@polymer/iron-demo-helpers/demo-snippet';
+    import '@polymer/polymer/lib/elements/dom-bind';
+    import '@polymer/polymer/lib/elements/custom-style';
+    import '@polymer/iron-icon/iron-icon';
+    import '@polymer/iron-icons/iron-icons';
+  </script>
+
+  <script type="module" src="../oe-extended-message-handler.js"></script>
+  <custom-style>
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </custom-style>
+</head>
+
+<body unresolved>
+
+  <div class="vertical-section-container centered">
+    <h3>Oe Extended Message Handler</h3>
+    <demo-snippet>
+      <template>
+        <oe-extended-message-handler fit-bottom duration="1000" persist-on='success,message,error,warning'></oe-extended-message-handler>
+        <paper-button raised onclick="showSuccess()">Success</paper-button>
+        <p>raises 'oe-show-success' event with data as string message</p>
+        <paper-button raised onclick="showMessage()">Message</paper-button>
+        <p>raises 'oe-show-message' event with data as string message</p>
+        <paper-button raised onclick="showWarning()">Warning</paper-button>
+        <p>raises 'oe-show-warning' event with data as string message</p>
+        
+        <paper-button raised onclick="showError()">Error</paper-button>
+        <p>raises 'oe-show-error' event with data as string message</p>
+        
+        <paper-button raised onclick="showMessageForever()">Persistent</paper-button>
+        <p>raises 'oe-show-message' event with data as {message:..., forever:true}</p>
+        <paper-button raised onclick="getConfirmation()">Confirmation</paper-button>
+        <p>raises 'oe-show-confirm' event with data as {message:..., ok:okCallbackFunc, cancel:cancelCallbackFunc}</p>
+        <paper-button raised onclick="showMessageOkCallback()">Show-Message with OK callback</paper-button>
+        <p>raises 'oe-show-message' event with data as {message:..., ok:callbackFunc}</p>
+
+        <paper-button raised onclick="demoTranslatedMessage()">Translation/valueMissing</paper-button>
+        <p>raises 'oe-show-message' event with data as {code:'valueMissing'}</p>
+
+        <paper-button raised onclick="demoTranslationFallback()">Translation/invalid-credentials/fallback</paper-button>
+        <p>raises 'oe-show-message' event with data as {code:'invalid-credentials',message:'Fallback message...'}</p>
+      </template>
+    </demo-snippet>
+
+  </div>
+</body>
+
+</html>

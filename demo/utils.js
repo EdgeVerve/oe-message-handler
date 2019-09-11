@@ -58,7 +58,7 @@ function showMessage() {
 }
 
 function showWarning() {
-  var event = new CustomEvent('oe-show-warning', {
+  var event = new CustomEvent('oe-show-warning', {  
     detail: 'This is a warning message!'
   });
   window.dispatchEvent(event);
@@ -86,7 +86,7 @@ function showMessageForever() {
 }
 
 function showMessageOkCallback() {
-  var event = new CustomEvent('oe-show-success', {
+  var event = new CustomEvent('oe-show-message', {
     detail: {
       message: 'Report is generaged.',
       okLabel: 'Open',

@@ -37,7 +37,6 @@ var OeMessageHandler = window.customElements.get("oe-message-handler");
  * 
  * @customElement
  * @polymer
- * @appliesMixin OEFieldMixin
  * @demo demo/demo-oe-extended-message-handler.html
  */
 class OeExtendedMessageHandler extends OeMessageHandler {
@@ -204,8 +203,8 @@ class OeExtendedMessageHandler extends OeMessageHandler {
     }
   }
 
-  attached() {
-    super.attached();
+  connectedCallback() {
+    super.connectedCallback();
     if (this.fitBottom) {
       this.$.messageClosable.classList.add('fit-bottom');
     }

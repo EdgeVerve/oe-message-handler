@@ -2,7 +2,7 @@
   "name": "oe-message-handler",
   "description": "An element for handling message/warning/error display using paper-toast",
   "main": "oe-message-handler.js",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "scripts": {
     "test": "polymer test --module-resolution node --skip-selenium-install",
     "lint": "eslint .",
@@ -12,8 +12,8 @@
     "@polymer/paper-button": "^3.0.1",
     "@polymer/paper-toast": "^3.0.1",
     "@polymer/polymer": "^3.1.0",
-    "oe-i18n-msg": "git+http://evgit/oecloud.io/oe-i18n-msg.git#master",
-    "oe-mixins": "git+http://evgit/oecloud.io/oe-mixins.git#master"
+    "oe-i18n-msg": "git+http://evgit/oecloud.io/oe-i18n-msg.git#2.2.0",
+    "oe-mixins": "git+http://evgit/oecloud.io/oe-mixins.git#2.2.0"
   },
   "devDependencies": {
     "@polymer/iron-component-page": "^4.0.1",

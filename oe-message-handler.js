@@ -80,8 +80,8 @@ import "@polymer/paper-button/paper-button.js";
  * ```
  *     this.fire('oe-show-confirm', {
  *       message:'Record will be permanently removed. Are you sure?',
- *         ok: okCallback,
- *         cancel:cancelCallback
+ *       ok: okCallback,
+ *       cancel:cancelCallback
  *     });
  * ```
  * ## Styling
@@ -95,7 +95,6 @@ import "@polymer/paper-button/paper-button.js";
  * 
  * @customElement
  * @polymer
- * @appliesMixin OEFieldMixin
  * @demo demo/demo-oe-message-handler.html
  */
 class OeMessageHandler extends mixinBehaviors([], PolymerElement) {
@@ -143,6 +142,7 @@ class OeMessageHandler extends mixinBehaviors([], PolymerElement) {
       </paper-toast>
       `;
   }
+
   static get properties() {
     return {
       /* duration for the toast display */
@@ -195,6 +195,7 @@ class OeMessageHandler extends mixinBehaviors([], PolymerElement) {
     toast.classList.add(type);
     toast.show();
   }
+
   showConfirmation(data) {
     if(typeof data === 'string'){
       data = {message: data};
@@ -215,6 +216,7 @@ class OeMessageHandler extends mixinBehaviors([], PolymerElement) {
     // this.$.confirm._finishRenderOpened();
 
   }
+
   _choiceMade(e) {
     if (e.currentTarget.cb) {
       e.currentTarget.cb();
@@ -234,25 +236,27 @@ class OeMessageHandler extends mixinBehaviors([], PolymerElement) {
     // }
     // this.$.confirm._finishRenderClosed();
   }
+
   _closeToast(e) {
     this.set('okLabel', 'OK');
     this.set('cancelLabel', 'Cancel');
 
     this.$.closable.toggle();
-    if (e.currentTarget.cb) {
+    if (typeof e.currentTarget.cb === "function") {
       e.currentTarget.cb();
       e.currentTarget.cb = undefined;
     }
   }
 
-  attached() {
-    super.attached();
+  connectedCallback() {
+    super.connectedCallback();
     if (this.fitBottom) {
       this.$.toast.classList.add('fit-bottom');
       this.$.closable.classList.add('fit-bottom');
       this.$.confirm.classList.add('fit-bottom');
     }
   }
+
   ready() {
     super.ready();
     var self = this;

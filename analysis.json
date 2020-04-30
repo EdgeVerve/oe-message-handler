@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "elements": [
     {
-      "description": "# oe-message-handler\n`<oe-message-handler>` is an element for handling message/warning/error display using `<paper-toast>`.\nThe component can be placed anywhere on the main application page and all message display will be\nhandled automatically.\n\n```\n <oe-message-handler duration=\"2000\" persist-on=\"error\"></oe-message-handler>\n```\n\n## Show a toast\n\n### Within a polymer element\n```\nthis.fire('oe-show-message','Hello World!');\n```\n\n### From javascript\n```\n var event = new CustomEvent('oe-show-message', {detail: \"Hello World!\"});\n window.dispatchEvent(event);\n```\n\n## For warning and error messages\n```\n this.fire('oe-show-warning','This is a warning message!');\n this.fire('oe-show-error','Oh snap! something went terribly wrong');\n```\n\n## Toast that stays forever\n```\n this.fire('oe-show-message',{\n     message:'This message stays until the next toast',\n     forever:true\n });\n```\n\n## Toasts to be explicitly dismissed\n  When persist-on=\"error,warning\" is provided, all error and warning messages will persist and\nOK button must be pressed to dismiss the toast. An ok callback can be provided which is invoked\nwhen user presses OK.\n```\n this.fire('oe-show-error', {\n       message:'You must login before posting data.',\n     ok: goToLoginPage\n });\n```\n\n\n## i18n\nIf passed in message object has a `code` property, it is transformed for i18n. This means, you can pass the error-codes/message-codes as `msgData.code` and `oe-message-handler` will translate them into current language. When a translation is not found, `msgData.message` is displayed (if present), otherwise `msgData.code` (i.e. the error-code/message-code) is displayed as it is.\n```\nthis.fire('oe-show-error', {\n        code:'invalid-credentials',\n        message: 'Invalid Credentials'\n});\n```\n\nNow the `oe-message-handler` will look for a translation for 'invalid-credentials' and will display\nif it is found. If the translation is not defined then 'Invalid Credentials' will be displayed.\n\n## Confirmation window\n\nConfirmation toast, takes ok and cancel callbacks.\n```\n    this.fire('oe-show-confirm', {\n      message:'Record will be permanently removed. Are you sure?',\n        ok: okCallback,\n        cancel:cancelCallback\n    });\n```\n## Styling\nThe following custom properties and mixins are available for styling:\n\nCustom property | Description | Default\n----------------|-------------|----------\n`--oe-message-success-background` | The background color of the success | `#78ab46`\n`--oe-message-warning-background` | The background color of the warning | `#ffa000`\n`--oe-message-error-background`   | The background color of the error   | `#d32f2f`",
+      "description": "# oe-message-handler\n`<oe-message-handler>` is an element for handling message/warning/error display using `<paper-toast>`.\nThe component can be placed anywhere on the main application page and all message display will be\nhandled automatically.\n\n```\n <oe-message-handler duration=\"2000\" persist-on=\"error\"></oe-message-handler>\n```\n\n## Show a toast\n\n### Within a polymer element\n```\nthis.fire('oe-show-message','Hello World!');\n```\n\n### From javascript\n```\n var event = new CustomEvent('oe-show-message', {detail: \"Hello World!\"});\n window.dispatchEvent(event);\n```\n\n## For warning and error messages\n```\n this.fire('oe-show-warning','This is a warning message!');\n this.fire('oe-show-error','Oh snap! something went terribly wrong');\n```\n\n## Toast that stays forever\n```\n this.fire('oe-show-message',{\n     message:'This message stays until the next toast',\n     forever:true\n });\n```\n\n## Toasts to be explicitly dismissed\n  When persist-on=\"error,warning\" is provided, all error and warning messages will persist and\nOK button must be pressed to dismiss the toast. An ok callback can be provided which is invoked\nwhen user presses OK.\n```\n this.fire('oe-show-error', {\n       message:'You must login before posting data.',\n     ok: goToLoginPage\n });\n```\n\n\n## i18n\nIf passed in message object has a `code` property, it is transformed for i18n. This means, you can pass the error-codes/message-codes as `msgData.code` and `oe-message-handler` will translate them into current language. When a translation is not found, `msgData.message` is displayed (if present), otherwise `msgData.code` (i.e. the error-code/message-code) is displayed as it is.\n```\nthis.fire('oe-show-error', {\n        code:'invalid-credentials',\n        message: 'Invalid Credentials'\n});\n```\n\nNow the `oe-message-handler` will look for a translation for 'invalid-credentials' and will display\nif it is found. If the translation is not defined then 'Invalid Credentials' will be displayed.\n\n## Confirmation window\n\nConfirmation toast, takes ok and cancel callbacks.\n```\n    this.fire('oe-show-confirm', {\n      message:'Record will be permanently removed. Are you sure?',\n      ok: okCallback,\n      cancel:cancelCallback\n    });\n```\n## Styling\nThe following custom properties and mixins are available for styling:\n\nCustom property | Description | Default\n----------------|-------------|----------\n`--oe-message-success-background` | The background color of the success | `#78ab46`\n`--oe-message-warning-background` | The background color of the warning | `#ffa000`\n`--oe-message-error-background`   | The background color of the error   | `#d32f2f`",
       "summary": "",
       "path": "oe-message-handler.js",
       "properties": [
@@ -105,11 +105,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 197,
+              "line": 198,
               "column": 2
             },
             "end": {
-              "line": 216,
+              "line": 217,
               "column": 3
             }
           },
@@ -129,11 +129,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 217,
+              "line": 219,
               "column": 2
             },
             "end": {
-              "line": 235,
+              "line": 237,
               "column": 3
             }
           },
@@ -153,11 +153,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 236,
+              "line": 239,
               "column": 2
             },
             "end": {
-              "line": 245,
+              "line": 248,
               "column": 3
             }
           },
@@ -172,16 +172,16 @@
           }
         },
         {
-          "name": "attached",
+          "name": "connectedCallback",
           "description": "",
-          "privacy": "protected",
+          "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 247,
+              "line": 250,
               "column": 2
             },
             "end": {
-              "line": 254,
+              "line": 257,
               "column": 3
             }
           },
@@ -197,11 +197,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 255,
+              "line": 259,
               "column": 2
             },
             "end": {
-              "line": 273,
+              "line": 277,
               "column": 3
             }
           },
@@ -222,11 +222,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 100,
+          "line": 99,
           "column": 0
         },
         "end": {
-          "line": 274,
+          "line": 278,
           "column": 1
         }
       },
@@ -289,10 +289,341 @@
         "selectors": []
       },
       "slots": [],
-      "tagname": "oe-message-handler",
-      "mixins": [
-        "OEFieldMixin"
-      ]
+      "tagname": "oe-message-handler"
+    },
+    {
+      "description": "# oe-extended-message-handler\n`<oe-extended-message-handler>` is an implementaion of oe-message-handler using custom styles.\n\n## Styling\nThe following custom properties and mixins are available for styling:\n\nCustom property | Description | Default\n----------------|-------------|----------\n`--oe-message-success-background` | The background color of the success | `#ffffff`\n`--oe-message-success-border-left-color` | Border left color for success notification bar | `#36B37E`\n`--oe-message-info-background`   | The background color of the message   | `#ffffff`\n`--oe-message-info-border-left-color` | Border left color for message notification bar | `#006BFF`\n`--oe-message-warning-background` | The background color of the warning | `#ffffff`\n`--oe-message-warning-border-left-color` | Border left color for warning notification bar | `#FFAB00`\n`--oe-message-error-background`   | The background color of the error   | `#ffffff`\n`--oe-message-error-border-left-color` | Border left color for error notification bar | `#F04646`",
+      "summary": "",
+      "path": "oe-extended-message-handler.js",
+      "properties": [
+        {
+          "name": "duration",
+          "type": "number | null | undefined",
+          "description": "duration for the toast display",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "oe-message-handler.js",
+            "start": {
+              "line": 148,
+              "column": 6
+            },
+            "end": {
+              "line": 151,
+              "column": 7
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "Number"
+            }
+          },
+          "defaultValue": "3000",
+          "inheritedFrom": "OeMessageHandler"
+        },
+        {
+          "name": "fitBottom",
+          "type": "boolean | null | undefined",
+          "description": "fit entire screen width at bottom",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "oe-message-handler.js",
+            "start": {
+              "line": 154,
+              "column": 6
+            },
+            "end": {
+              "line": 156,
+              "column": 7
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "Boolean"
+            }
+          },
+          "inheritedFrom": "OeMessageHandler"
+        },
+        {
+          "name": "persistOn",
+          "type": "string | null | undefined",
+          "description": "comma separated list of messaging events when the toast should persist and\r\nshould not auto hide after `duration`",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "oe-message-handler.js",
+            "start": {
+              "line": 161,
+              "column": 6
+            },
+            "end": {
+              "line": 163,
+              "column": 7
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "String"
+            }
+          },
+          "inheritedFrom": "OeMessageHandler"
+        }
+      ],
+      "methods": [
+        {
+          "name": "showToast",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 135,
+              "column": 2
+            },
+            "end": {
+              "line": 194,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "type"
+            },
+            {
+              "name": "data"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "showConfirmation",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "oe-message-handler.js",
+            "start": {
+              "line": 198,
+              "column": 2
+            },
+            "end": {
+              "line": 217,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "data"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "OeMessageHandler"
+        },
+        {
+          "name": "_choiceMade",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "oe-message-handler.js",
+            "start": {
+              "line": 219,
+              "column": 2
+            },
+            "end": {
+              "line": 237,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "OeMessageHandler"
+        },
+        {
+          "name": "_closeToast",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "oe-message-handler.js",
+            "start": {
+              "line": 239,
+              "column": 2
+            },
+            "end": {
+              "line": 248,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "OeMessageHandler"
+        },
+        {
+          "name": "connectedCallback",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 205,
+              "column": 2
+            },
+            "end": {
+              "line": 210,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "ready",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "oe-message-handler.js",
+            "start": {
+              "line": 259,
+              "column": 2
+            },
+            "end": {
+              "line": 277,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "OeMessageHandler"
+        },
+        {
+          "name": "_closeMessageToast",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 196,
+              "column": 2
+            },
+            "end": {
+              "line": 203,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "e"
+            }
+          ],
+          "return": {
+            "type": "void"
+          }
+        }
+      ],
+      "staticMethods": [],
+      "demos": [
+        {
+          "url": "demo/demo-oe-extended-message-handler.html",
+          "description": ""
+        }
+      ],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 41,
+          "column": 0
+        },
+        "end": {
+          "line": 211,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "superclass": "OeMessageHandler",
+      "name": "OeExtendedMessageHandler",
+      "attributes": [
+        {
+          "name": "duration",
+          "description": "duration for the toast display",
+          "sourceRange": {
+            "file": "oe-message-handler.js",
+            "start": {
+              "line": 148,
+              "column": 6
+            },
+            "end": {
+              "line": 151,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "type": "number | null | undefined",
+          "inheritedFrom": "OeMessageHandler"
+        },
+        {
+          "name": "fit-bottom",
+          "description": "fit entire screen width at bottom",
+          "sourceRange": {
+            "file": "oe-message-handler.js",
+            "start": {
+              "line": 154,
+              "column": 6
+            },
+            "end": {
+              "line": 156,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "type": "boolean | null | undefined",
+          "inheritedFrom": "OeMessageHandler"
+        },
+        {
+          "name": "persist-on",
+          "description": "comma separated list of messaging events when the toast should persist and\r\nshould not auto hide after `duration`",
+          "sourceRange": {
+            "file": "oe-message-handler.js",
+            "start": {
+              "line": 161,
+              "column": 6
+            },
+            "end": {
+              "line": 163,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "type": "string | null | undefined",
+          "inheritedFrom": "OeMessageHandler"
+        }
+      ],
+      "events": [],
+      "styling": {
+        "cssVariables": [],
+        "selectors": []
+      },
+      "slots": [],
+      "tagname": "oe-extended-message-handler"
     }
   ]
 }

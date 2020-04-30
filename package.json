@@ -2,7 +2,7 @@
   "name": "oe-message-handler",
   "description": "An element for handling message/warning/error display using paper-toast",
   "main": "oe-message-handler.js",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "scripts": {
     "test": "polymer test --module-resolution node --skip-selenium-install",
     "lint": "eslint .",
